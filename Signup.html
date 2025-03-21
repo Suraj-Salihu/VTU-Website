@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - VTU Website</title>
+    <!-- Internal CSS -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Sign Up Container */
+        .signup-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .signup-container h2 {
+            font-size: 24px;
+            color: #2E8B57;
+            margin-bottom: 20px;
+        }
+
+        .signup-container input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .signup-container .terms {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+
+        .signup-container .terms input {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .signup-container .terms label {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .signup-container button {
+            width: 100%;
+            background-color: #2E8B57;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        .signup-container button:hover {
+            background-color: #256D47;
+        }
+
+        .signup-container p {
+            font-size: 14px;
+            color: #333;
+            margin-top: 15px;
+        }
+
+        .signup-container a {
+            color: #2E8B57;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Register New Account</h2>
+        <input type="text" placeholder="First Name">
+        <input type="text" placeholder="Last Name">
+        <input type="email" placeholder="Email Address">
+        <input type="tel" placeholder="Phone Number">
+        <input type="text" placeholder="Username">
+        <input type="text" placeholder="Enter Referral Id">
+        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Confirm Password">
+        <div class="terms">
+            <input type="checkbox" id="terms">
+            <label for="terms">I Accept Terms And Conditions</label>
+        </div>
+        <button>Sign Up</button>
+        <p>Already have an account? <a href="login.html">Sign in</a></p>
+    </div>
+</body>
+</html>

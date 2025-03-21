@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History - VTU</title>
+    <!-- Internal CSS to enable scrolling -->
+    <style>
+        /* Override external CSS to enable scrolling */
+        html, body {
+            height: auto;
+            overflow: auto;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Ensure the content section is scrollable */
+        section {
+            padding: 20px;
+            margin: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Header styling */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+            background: #2E8B57;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        /* Transaction list styling */
+        section h2 {
+            font-size: 24px;
+            color: #2E8B57;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: #eaf5ea;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        section ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* View More Button */
+        .view-more-btn {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2E8B57;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        .view-more-btn:hover {
+            background-color: #256D47;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Transaction History</h1>
+        <a href="index.html" class="back-btn">&larr; Back</a>
+    </header>
+
+    <section>
+        <h2>Recent Transactions</h2>
+        <ul>
+            <li>₦850 Data Purchase - MTN - 10:15 AM</li>
+            <li>₦1200 Airtime Recharge - Airtel - 9:50 AM</li>
+            <li>₦4500 Electricity Bill Paid - 9:30 AM</li>
+            <li>₦650 Data Purchase - Glo - 9:15 AM</li>
+            <li>₦2000 Airtime Recharge - 9mobile - 9:00 AM</li>
+            <li>₦5500 Cable TV Subscription - 8:45 AM</li>
+            <li>₦750 Data Purchase - MTN - 8:30 AM</li>
+            <li>₦950 Airtime Recharge - Airtel - 8:15 AM</li>
+            <li>₦6000 Electricity Bill Paid - 8:00 AM</li>
+            <li>₦500 Data Purchase - Glo - 7:45 AM</li>
+            <li>₦1500 Airtime Recharge - MTN - 7:30 AM</li>
+        </ul>
+        <!-- View More Button -->
+        <a href="full-transactions.html" class="view-more-btn">View More</a>
+    </section>
+</body>
+</html>

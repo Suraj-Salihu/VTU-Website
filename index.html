@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTU Website - Homepage</title>
+    <!-- Internal CSS -->
+    <style>
+        /* Prevent scrolling */
+        html, body {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+            background: #2E8B57;
+            color: white;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Navigation Menu */
+nav {
+  text-align: center;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(46, 139, 87, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 1001;
+}
+
+        nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(46, 139, 87, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 1001;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav ul li:last-child {
+    border-bottom: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+        .close-menu {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Account Details Section */
+        .balance-section {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: relative; /* Added for positioning the Transaction History link */
+        }
+
+        .balance-section h2 {
+            font-weight: normal;
+            font-size: 15px;
+            color: black;
+            margin-top: -5px;
+        }
+
+        #balance {
+            color: green;
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: -5px;
+        }
+
+        .balance-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            background: #2E8B57;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .balance-btn:hover {
+            background: #276d45;
+        }
+
+        /* Toggle Balance Eye */
+        #toggle-balance {
+            margin-left: 5px;
+            margin-bottom: 25px;
+            cursor: pointer;
+        }
+
+        #eye-icon {
+            color: #2E8B57;
+        }
+
+        /* Transaction History Link */
+        .transaction-history-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: black; /* Green color for the link */
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        /* Services Section */
+        .services-section {
+            margin-top: 50px;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+
+        .service-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 400px;
+        }
+
+        .service-item {
+            background: white;
+            padding-top: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .service-item a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            padding: 10px;
+            border-radius: 12px;
+        }
+
+        .service-item i {
+            font-size: 25px;
+            color: #2E8B57;
+        }
+
+        .service-item p {
+            margin-bottom: 10px;
+            margin-top: 5px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
+        .service-item:hover {
+            background: #d6e3d8;
+        }
+
+        /* Headings */
+        h3 {
+            margin-left: 20px;
+            margin-right: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: -10px;
+        }
+
+        h4 {
+            margin-left: 20px;
+            margin-right: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: -40px;
+        }
+    </style>
+    <!-- FontAwesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>VTU Website</h1>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    </header>
+
+<nav id="menu">
+    <span class="close-menu" onclick="toggleMenu()">&times;</span>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="add-money.html">Add Money</a></li>
+        <li><a href="send-money.html">Send Money</a></li>
+        <li><a href="data.html">Buy Data</a></li>
+        <li><a href="airtime.html">Buy Airtime</a></li>
+        <li><a href="bills.html">Pay Bills</a></li>
+        <li><a href="Bank-Account.html">Bank Account</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="settings.html">Settings</a></li>
+    </ul>
+</nav>
+
+    <!-- Account Details Section -->
+    <h3>Account Details</h3>
+    <section class="balance-section">
+        <a href="Transaction.html" class="transaction-history-link"><i>Transaction History></i></a>
+        <h2>Balance</h2>
+        <div style="display: flex; align-items: center;">
+            <p id="balance">₦50,000</p>
+            <span id="toggle-balance" onclick="toggleBalance()">
+                <i id="eye-icon" class="fa fa-eye"></i>
+            </span>
+        </div>
+        <a href="add-money.html" class="balance-btn">Add Money</a>
+        <a href="send-money.html" class="balance-btn">Send Money</a>
+    </section>
+
+    <!-- Services Section -->
+    <h4>Services</h4>
+    <section class="services-section">
+        <div class="service-buttons">
+            <div class="service-item">
+                <a href="data.html">
+                    <i class="fas fa-mobile-alt"></i>
+                    <p>Data</p>
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="airtime.html">
+                    <i class="fas fa-wallet"></i>
+                    <p>Airtime</p>
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="bills.html">
+                    <i class="fas fa-file-invoice"></i>
+                    <p>Bill<br>Payment</p>
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="cable.html">
+                    <i class="fas fa-tv"></i>
+                    <p>Cable<br>Subscription</p>
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="more.html">
+                    <i class="fas fa-plus-circle"></i>
+                    <p>More</p>
+                </a>
+            </div>
+            <div class="service-item">
+                <a href="settings.html">
+                    <i class="fas fa-cog"></i>
+                    <p>Settings</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            if (menu.style.width === "250px") {
+                menu.style.width = "0";
+            } else {
+                menu.style.width = "250px";
+            }
+        }
+function toggleBalance() {
+    const balance = document.getElementById("balance");
+    const eyeIcon = document.getElementById("eye-icon");
+
+    if (balance.textContent.includes("*")) {
+        // If balance is hidden, show the actual balance
+        balance.textContent = "₦50,000"; 
+        eyeIcon.classList.remove("fa-eye-slash");
+        eyeIcon.classList.add("fa-eye");
+    } else {
+        // If balance is visible, hide the balance (show ****)
+        balance.textContent = "₦****"; // Hide the balance amount
+        eyeIcon.classList.remove("fa-eye");
+        eyeIcon.classList.add("fa-eye-slash");
+    }
+}
+    </script>
+</body>
+</html>

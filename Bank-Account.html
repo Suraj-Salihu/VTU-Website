@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account - VTU Website</title>
+    <style>
+        /* Prevent scrolling */
+        html, body {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+            background: #2E8B57;
+            color: white;
+            position: relative;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        /* Back Button */
+        .back-btn {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Bank Account Section */
+        .bank-account-section {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .bank-account-section p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .add-account-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background: #2E8B57;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .add-account-btn:hover {
+            background: #276d45;
+        }
+
+        /* Slide-down Form */
+        .add-account-form {
+            position: fixed;
+            top: -50%;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            transition: top 0.5s ease-in-out;
+        }
+
+        .add-account-form h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #2E8B57;
+        }
+
+        .input-group {
+            margin: 15px 0;
+            text-align: center;
+            margin-right: 20px;
+            margin-left: -10px;
+        }
+
+        .input-group label {
+            text-align: left;
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            margin-left: 30px;
+        }
+
+        .input-group input, .input-group select {
+            width: 80%;
+            padding: 10px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-bar {
+            margin-bottom: 10px;
+        }
+
+        /* Nigerian Banks Dropdown */
+        .bank-list {
+            margin-left: 10px;
+            margin-right: 20px;
+            max-height: 270px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: none;
+            background: white;
+            position: absolute;
+            width: 80%;
+            z-index: 1000;
+        }
+
+        .bank-list div {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .bank-list div:hover {
+            background: #eae7e7;
+        }
+
+        .save-btn {
+            background: #2E8B57;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .save-btn:hover {
+            background: #276d45;
+        }
+
+        /* Close Button */
+        .close-btn {
+            float: right;
+            font-size: 20px;
+            cursor: pointer;
+            color: #888;
+        }
+
+        .close-btn:hover {
+            color: black;
+        }
+
+        /* Added Accounts List */
+        .added-accounts {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .added-accounts div {
+            background: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .added-accounts div p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bank Account</h1>
+    <a href="index.html" class="back-btn">&larr; Back</a>
+</header>
+
+<section class="bank-account-section">
+    <div id="noAccountMessage">
+        <p>You have not yet added a bank account.</p>
+    </div>
+    <div class="added-accounts" id="addedAccounts"></div>
+    <button class="add-account-btn" onclick="showForm()">+ Add Bank Account</button>
+</section>
+
+<!-- Slide-down Form -->
+<div class="add-account-form" id="addAccountForm">
+    <span class="close-btn" onclick="hideForm()">&times;</span>
+    <h2>Add Bank Account</h2>
+
+    <div class="input-group">
+        <label for="bankSearch">Bank Name</label>
+        <input type="text" id="bankSearch" placeholder="Search bank..." class="search-bar" oninput="filterBanks()">
+        <div class="bank-list" id="bankList">
+            <!-- Nigerian Banks will be inserted here -->
+        </div>
+    </div>
+
+    <div class="input-group">
+        <label for="accountNumber">Account Number</label>
+        <input type="number" id="accountNumber" placeholder="Enter account number">
+    </div>
+
+    <div class="input-group">
+        <label for="accountName">Account Name</label>
+        <input type="text" id="accountName" placeholder="Enter account name">
+    </div>
+
+    <button class="save-btn" onclick="saveAccount()">Save Account</button>
+</div>
+
+<script>
+    // Array to store added accounts
+    let accounts = [];
+
+    // Load accounts from localStorage on page load
+    function loadAccounts() {
+        const savedAccounts = localStorage.getItem("accounts");
+        if (savedAccounts) {
+            accounts = JSON.parse(savedAccounts);
+            updateAccountsDisplay();
+        }
+    }
+
+    // Save accounts to localStorage
+    function saveAccountsToStorage() {
+        localStorage.setItem("accounts", JSON.stringify(accounts));
+    }
+
+    // Function to show the form
+    function showForm() {
+        document.getElementById("addAccountForm").style.top = "0";
+    }
+
+    // Function to hide the form
+    function hideForm() {
+        document.getElementById("addAccountForm").style.top = "-50%";
+    }
+
+    // Function to filter banks
+    function filterBanks() {
+        let input = document.getElementById("bankSearch").value.toLowerCase();
+        let banks = document.querySelectorAll("#bankList div");
+        banks.forEach(bank => {
+            if (bank.innerText.toLowerCase().includes(input)) {
+                bank.style.display = "block";
+            } else {
+                bank.style.display = "none";
+            }
+        });
+    }
+
+    // Nigerian Banks List
+    const banks = [
+        "Access Bank", "Citibank Nigeria", "Ecobank Nigeria", "Fidelity Bank", 
+        "First Bank of Nigeria", "First City Monument Bank", "Guaranty Trust Bank",
+        "Heritage Bank", "Keystone Bank", "Polaris Bank", "Stanbic IBTC Bank", 
+        "Standard Chartered Bank", "Sterling Bank", "Union Bank", "United Bank for Africa",
+        "Unity Bank", "Wema Bank", "Zenith Bank"
+    ];
+
+    // Load Banks into Dropdown
+    window.onload = () => {
+        let bankListDiv = document.getElementById("bankList");
+        banks.forEach(bank => {
+            let div = document.createElement("div");
+            div.textContent = bank;
+            div.onclick = function () {
+                document.getElementById("bankSearch").value = bank;
+                bankListDiv.style.display = "none";
+            };
+            bankListDiv.appendChild(div);
+        });
+
+        document.getElementById("bankSearch").onfocus = () => {
+            bankListDiv.style.display = "block";
+        };
+
+        // Load saved accounts on page load
+        loadAccounts();
+    };
+
+    // Function to save account
+    function saveAccount() {
+        const bankName = document.getElementById("bankSearch").value;
+        const accountNumber = document.getElementById("accountNumber").value;
+        const accountName = document.getElementById("accountName").value;
+
+        if (!bankName || !accountNumber || !accountName) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        // Add the new account to the array
+        accounts.push({ bankName, accountNumber, accountName });
+
+        // Save accounts to localStorage
+        saveAccountsToStorage();
+
+        // Update the UI
+        updateAccountsDisplay();
+
+        // Clear the form
+        document.getElementById("bankSearch").value = "";
+        document.getElementById("accountNumber").value = "";
+        document.getElementById("accountName").value = "";
+
+        // Hide the form
+        hideForm();
+    }
+
+    // Function to update the accounts display
+    function updateAccountsDisplay() {
+        const addedAccountsDiv = document.getElementById("addedAccounts");
+        const noAccountMessageDiv = document.getElementById("noAccountMessage");
+
+        // Clear the current display
+        addedAccountsDiv.innerHTML = "";
+
+        // Add each account to the display
+        accounts.forEach(account => {
+            const accountDiv = document.createElement("div");
+            accountDiv.innerHTML = `
+                <p><strong>Bank Name:</strong> ${account.bankName}</p>
+                <p><strong>Account Number:</strong> ${account.accountNumber}</p>
+                <p><strong>Account Name:</strong> ${account.accountName}</p>
+            `;
+            addedAccountsDiv.appendChild(accountDiv);
+        });
+
+        // Show/hide the "no account" message
+        if (accounts.length > 0) {
+            noAccountMessageDiv.style.display = "none";
+        } else {
+            noAccountMessageDiv.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>

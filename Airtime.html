@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Airtime - VTU</title>
+    <!-- Internal CSS -->
+    <style>
+        /* Prevent scrolling */
+        html, body {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+            background: #2E8B57;
+            color: white;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        /* Services Section */
+        .services-section {
+            margin-top: 50px;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+
+        /* Service Buttons */
+        .service-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 400px;
+        }
+
+        /* Service Item */
+        .service-item {
+            background: white;
+            padding-top: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .service-item img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .service-item p {
+            margin-bottom: 10px;
+            margin-top: 5px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
+        .service-item:hover {
+            background: #d6e3d8;
+        }
+
+        /* Headings */
+        h4 {
+            margin-left: 20px;
+            margin-right: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: -40px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Buy Airtime</h1>
+        <a href="index.html" class="back-btn">&larr; Back</a>
+    </header>
+    <h4>Airtime Topup</h4>
+    <section class="services-section">
+        <div class="service-buttons">
+            <div class="service-item" onclick="openService('data')">
+                <img src="images/mtn.png" alt="MTN Logo" width="50" height="50">
+                <p>MTN</p>
+            </div>
+            <div class="service-item" onclick="openService('airtime')">
+                <img src="images/Airtel.png" alt="Airtel Logo" width="50" height="50">
+                <p>Airtel</p>
+            </div>
+            <div class="service-item" onclick="openService('bills')">
+                <img src="images/9mobile.png" alt="9mobile Logo" width="50" height="50">
+                <p>9mobile</p>
+            </div>
+            <div class="service-item" onclick="openService('cable')">
+                <img src="images/glo.png" alt="Glo Logo" width="50" height="50">
+                <p>Glo</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

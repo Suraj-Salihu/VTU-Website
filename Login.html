@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - VTU Website</title>
+    <!-- Internal CSS -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Login Container */
+        .login-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 70%;
+        }
+
+        .login-container h2 {
+            font-size: 24px;
+            color: #2E8B57;
+            margin-bottom: 15px;
+        }
+
+        .login-container input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .login-container button {
+            width: 100%;
+            background-color: #2E8B57;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background-color: #256D47;
+        }
+
+        .login-container p {
+            font-size: 14px;
+            color: #333;
+            margin-top: 15px;
+        }
+
+        .login-container a {
+            color: #2E8B57;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login to VTU</h2>
+        <input type="email" placeholder="Enter your email">
+        <input type="password" placeholder="Enter your password">
+        <button>Login</button>
+        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+    </div>
+</body>
+</html>

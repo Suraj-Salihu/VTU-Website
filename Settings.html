@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings and Privacy - VTU</title>
+    <style>
+        /* Prevent scrolling */
+        html, body {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+            background: #2E8B57;
+            color: white;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+        h2 {
+          margin-left: 0px;
+          margin-bottom: 10px;
+          font-size: 20px;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        /* Services Section */
+        .services-section {
+            margin-top: 20px;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+
+        /* Service Buttons */
+        .service-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 400px;
+        }
+
+        /* Service Item */
+        .service-item {
+            background: white;
+            padding-top: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .service-item a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            padding: 10px;
+            border-radius: 12px;
+        }
+
+        .service-item i {
+            font-size: 27px;
+            color: #2E8B57;
+        }
+
+        .service-item p {
+            margin-bottom: 10px;
+            margin-top: 5px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
+        .service-item:hover {
+            background: #d6e3d8;
+        }
+a {
+    text-decoration: none;
+}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <h1>Settings</h1>
+    <a href="index.html" class="back-btn">&larr; Back</a>
+</header>
+
+<section class="services-section">
+    <h2>Settings and Privacy</h2>
+    <div class="service-buttons">
+        <!-- Account -->
+        <a href="account.html" class="service-item">
+            <i class="fas fa-user-cog"></i> <!-- Icon for Account Settings -->
+            <p>Account</p>
+        </a>
+        <!-- Privacy Policy -->
+        <a href="privacy-policy.html" class="service-item">
+            <i class="fas fa-shield-alt"></i> <!-- Icon for Privacy Policy -->
+            <p>Privacy Policy</p>
+        </a>
+        <!-- About -->
+        <a href="about.html" class="service-item">
+            <i class="fas fa-info-circle"></i> <!-- Icon for About -->
+            <p>About</p>
+        </a>
+    </div>
+</section>
+
+</body>
+</html>

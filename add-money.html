@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Money - VTU</title>
+    <!-- Internal CSS -->
+    <style>
+        /* Prevent scrolling */
+        html, body {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+            background: #2E8B57;
+            color: white;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        /* Sections */
+        section {
+            background: white;
+            max-width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Input Fields */
+        input {
+            width: 100%; /* Use 100% to fill the container */
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+        }
+
+        /* Buttons */
+        button {
+            width: 100%; /* Use 100% to fill the container */
+            padding: 12px;
+            background: #2E8B57;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+        }
+
+        button:hover {
+            background: #276d45;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Add Money</h1>
+        <a href="home.html" class="back-btn">&larr; Back</a>
+    </header>
+
+    <section>
+        <h2>Enter Amount</h2>
+        <input type="number" placeholder="Enter Amount" />
+        <button>Add Money</button>
+    </section>
+</body>
+</html>
