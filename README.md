@@ -23,4 +23,4 @@ This is the frontend design of a VTU (Virtual Top-Up) platform. It includes mult
 ## Usage
 1. Clone the repository:
    ```sh
-   git clone https://github.com/suraj salihu/VTU-Website.git
+   git clone https://github.com/suraj-salihu/VTU-Website.git
